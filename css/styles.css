@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* The gradient background was created here
+  https://cssgradient.io/gradient-backgrounds/ */
+  background-image: linear-gradient(145deg, #92ffc0 8%, #002661 100%);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5em;
+
+  color: #fff;
+  letter-spacing: 0.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.header {
+  align-items: center;
+  margin: 2rem 5rem;
+}
+.container {
+  padding: 3.2rem 5rem;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+  position: relative;
+  top: 10;
+  left: 0;
+  display: block;
+  margin-bottom: 2rem;
+}
+input[type='checkbox']:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+
+  top: 0;
+  left: 0;
+  border: solid rgb(51, 55, 106);
+  border-radius: 0.3rem;
+  background-color: whitesmoke;
+}
+input[type='checkbox']:checked:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #286943;
+}
+input[type='checkbox']:checked:after {
+  content: '';
+  display: block;
+  background-color: #286943;
+  width: 0.5rem;
+  height: 0.8rem;
+  border: solid white;
+  border-width: 0 0.3rem 0.3rem 0;
+  transform: rotate(45deg);
+  transform: rotate(40deg);
+  position: absolute;
+  top: 0.4rem;
+  left: 0.7rem;
+}
+.dots {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  border-radius: 50%;
+
+  margin-top: 3rem;
+  position: relative;
+  background-color: purple;
+
+  animation-name: bounce;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  transition-timing-function: ease-in;
+
+  animation-play-state: paused;
+}
+.dot-one {
+  background-color: red;
+  animation-delay: 100ms;
+}
+.dot-two {
+  background-color: yellow;
+  animation-delay: 300ms;
+}
+.dot-three {
+  background-color: green;
+  animation-delay: 500ms;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(10vh);
+  }
+}
+
+input[type='checkbox']:checked + ul > li {
+  animation-play-state: running;
+}
